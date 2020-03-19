@@ -26,9 +26,6 @@ app.get("/", function(req, res) {
     if (!error) {
       // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
 
-      console.log("well success");
-
-      console.log(response);
       var $ = cheerio.load(html);
 
       console.log("load result: ", $("head"));
@@ -43,11 +40,6 @@ app.get("/", function(req, res) {
       const data = [...JSON.parse(scriptData)];
 
       res.send(data);
-
-      // Finally, we'll define the variables we're going to capture
-
-      //   var title, release, rating;
-      //   var json = { title: "", release: "", rating: "" };
     }
   });
 });
